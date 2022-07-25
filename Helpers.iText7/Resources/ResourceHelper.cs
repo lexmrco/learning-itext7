@@ -1,4 +1,5 @@
 ﻿using iText.IO.Image;
+using iText.Kernel.Pdf;
 using iText.Layout.Element;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,29 @@ namespace Helpers.iText7.Resources
 {
     public class ResourceHelper
     {
+        public static PdfReader GetTemplate(PdfTemplate template)
+        {
+            try
+            {
+                return new PdfReader(new MemoryStream(DocsResource.ResourceManager.GetObject(template.ToString()) as byte[]));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }
+
+        public static string GetText(string textName)
+        {
+            try
+            {
+                return TextsResource.ResourceManager.GetString(textName);
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
+        }
         public static Image FindImage(string imageName, int? index = null)
         {
             Image result = null;

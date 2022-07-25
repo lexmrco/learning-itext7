@@ -12,20 +12,39 @@
 
   <ItemGroup>
     <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\Documents\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\DocsResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocsResource.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\ImagesResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ImagesResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\TextsResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TextsResource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\DocsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\ImagesResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ImagesResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\TextsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextsResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
